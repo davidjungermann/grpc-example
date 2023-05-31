@@ -1,0 +1,7 @@
+{
+  "dependencies": {
+    "@bufbuild/connect": "^0.9.1",
+    "@bufbuild/connect-fastify": "^0.9.1",
+    "fastify": "^4.17.0"
+  }
+}
