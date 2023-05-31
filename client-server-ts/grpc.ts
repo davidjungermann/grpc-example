@@ -1,5 +1,5 @@
 import { createPromiseClient } from "@bufbuild/connect";
-import { HealthService } from "./gen/proto/health/v1/health_connect.js";
+import { HealthService } from "./gen/proto/health/v1/health_connect";
 import { createGrpcTransport } from "@bufbuild/connect-node";
 
 const transport = createGrpcTransport({
