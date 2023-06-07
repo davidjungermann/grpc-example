@@ -26,12 +26,11 @@ For running the Go server:
 
 For the TypeScript client:
 
-1. Navigate to the `client-server-ts` directory.
+1. Navigate to the `client-ts` directory.
 2. Run `buf generate buf.build/djungermann/grpc-example`. This fetches the proto files from the remote registry.
 3. Run `npm install` to install the necessary dependencies.
-4. Run `npx tsx server.ts` to start the TypeScript server.
-5. Make a request to a server using `npx tsx grpc.ts`
-6. Make a request to a server using `npx tsx http.ts`
+4. Make a request to a server using `npx tsx grpc.ts`
+5. Make a request to a server using `npx tsx http.ts`
 
 For the JavaScript client:
 
@@ -43,10 +42,10 @@ For the JavaScript client:
 
 In each case, the client will send a health check request to the server and log the response.
 
-This way, you can run the Go service, and make requests from both Typescript and Javascript, but you can also run the Typescript server, that has generated both client and server code and make the same request that way.
+This way, you can run the Go service, and make requests from both Typescript and Javascript.
 If you update the proto file and push that to Buf, you can try out how to propagate changes, and then implement them in the various examples. 
 
-**It's also possible to use connect-es to make the HTTP request, but I'll leave that up to the reader**
+**It's also possible to use connect-es to make the HTTP request, but I'll leave that up to the reader to implement**
 
 The TypeScript and JavaScript clients demonstrate how to use the protocol buffer messages and service stubs generated from the `.proto` files to make requests to a gRPC server.
 
