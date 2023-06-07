@@ -1,5 +1,3 @@
-.PHONY: protogen server client
-
 generate:
 	buf generate
 
