@@ -22,7 +22,7 @@ Before running the examples, ensure that you have Node.js, Go, and `buf` install
 
 For running the Go server:
 
-1. Run `make server` from the root directory to start the Go gRPC server.
+1. Run `make serve` from the root directory to start the Go gRPC server.
 
 For the TypeScript client:
 
