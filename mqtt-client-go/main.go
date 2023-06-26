@@ -3,7 +3,8 @@ package main
 import (
 	"log"
 
-	pb "grpc-example/mqtt-client-go/gen/telemetry/v1"
+	// Tricky path, but works out of the box :)
+	pb "buf.build/gen/go/djungermann/grpc-example/grpc/go/proto/telemetry/v1/telemetryv1grpc"
 
 	mqtt "github.com/eclipse/paho.mqtt.golang"
 	"google.golang.org/protobuf/proto"
@@ -20,6 +21,8 @@ func main() {
 	}
 
 	if token := client.Subscribe("telemetry", 0, func(client mqtt.Client, msg mqtt.Message) {
+		// TODO: Needs updating to another plugin maybe? 
+		// This o
 		telemetryResponse := &pb.TelemetryResponse{}
 		if err := proto.Unmarshal(msg.Payload(), telemetryResponse); err != nil {
 			log.Println("Failed to deserialize message:", err)
