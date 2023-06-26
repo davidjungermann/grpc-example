@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+package proto.telemetry.v1;
+
+import "google/api/annotations.proto";
+
+option go_package = "telemetry/v1;telemetry";
+
+service TelemetryService {
+  rpc Telemetry(TelemetryRequest) returns (TelemetryResponse) {
+    option (google.api.http) = {get: "/v1/telemetry"};
+  }
+}
+
+message TelemetryRequest {}
+
+message TelemetryResponse {
+  string status = 1;
+  string status2 = 2;
+}

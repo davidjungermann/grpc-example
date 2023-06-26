@@ -4,6 +4,7 @@ info:
   version: version not set
 tags:
   - name: HealthService
+  - name: TelemetryService
 consumes:
   - application/json
 produces:
@@ -23,6 +24,20 @@ paths:
             $ref: '#/definitions/rpcStatus'
       tags:
         - HealthService
+  /v1/telemetry:
+    get:
+      operationId: TelemetryService_Telemetry
+      responses:
+        "200":
+          description: A successful response.
+          schema:
+            $ref: '#/definitions/v1TelemetryResponse'
+        default:
+          description: An unexpected error response.
+          schema:
+            $ref: '#/definitions/rpcStatus'
+      tags:
+        - TelemetryService
 definitions:
   protobufAny:
     type: object
@@ -47,4 +62,11 @@ definitions:
     type: object
     properties:
       status:
+        type: string
+  v1TelemetryResponse:
+    type: object
+    properties:
+      status:
+        type: string
+      status2:
         type: string

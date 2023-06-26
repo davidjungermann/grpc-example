@@ -6,8 +6,11 @@ import (
 	"net"
 	"net/http"
 
-	pb_health "grpc-example/gen/health/v1"
-	health_handler "grpc-example/handlers"
+	pbhealth "grpc-example/gen/health/v1"
+	pbtelemetry "grpc-example/gen/telemetry/v1"
+
+	healthhandler "grpc-example/handlers/health"
+	telemetryhandler "grpc-example/handlers/telemetry"
 	"grpc-example/utils"
 
 	"github.com/grpc-ecosystem/grpc-gateway/v2/runtime"
@@ -24,7 +27,8 @@ func main() {
 	httpAddress := utils.GetPortFromEnv("HTTP_PORT", defaultHTTPPort)
 
 	// Initialize handlers
-	healthHandler := health_handler.NewHealthHandler()
+	healthHandler := healthhandler.NewHealthHandler()
+	telemetryHandler := telemetryhandler.NewTelemetryHandler()
 
 	lis, err := net.Listen("tcp", grpcAddress)
 	if err != nil {
@@ -35,7 +39,8 @@ func main() {
 	s := grpc.NewServer()
 
 	// Attach handler to the server
-	pb_health.RegisterHealthServiceServer(s, healthHandler)
+	pbhealth.RegisterHealthServiceServer(s, healthHandler)
+	pbtelemetry.RegisterTelemetryServiceServer(s, telemetryHandler)
 
 	// Register reflection service on gRPC server
 	reflection.Register(s)
@@ -61,7 +66,12 @@ func main() {
 	gwmux := runtime.NewServeMux()
 
 	// Register GW handlers for reverse proxy
-	err = pb_health.RegisterHealthServiceHandler(context.Background(), gwmux, conn)
+	err = pbhealth.RegisterHealthServiceHandler(context.Background(), gwmux, conn)
+	if err != nil {
+		log.Fatalln("Failed to register gateway:", err)
+	}
+
+	err = pbtelemetry.RegisterTelemetryServiceHandler(context.Background(), gwmux, conn)
 	if err != nil {
 		log.Fatalln("Failed to register gateway:", err)
 	}
