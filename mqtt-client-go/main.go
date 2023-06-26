@@ -3,7 +3,7 @@ package main
 import (
 	"log"
 
-	pb "grpc-example/gen/telemetry/v1"
+	pb "grpc-example/mqtt-client-go/gen/telemetry/v1"
 
 	mqtt "github.com/eclipse/paho.mqtt.golang"
 	"google.golang.org/protobuf/proto"
