@@ -4,7 +4,7 @@ import (
 	"context"
 	"log"
 
-	pb "grpc-example/gen/health/v1"
+	pb "mqtt-server-go/gen/health/v1"
 )
 
 type healthHandler struct {

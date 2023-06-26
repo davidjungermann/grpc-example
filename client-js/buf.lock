@@ -4,8 +4,8 @@ deps:
   - remote: buf.build
     owner: djungermann
     repository: grpc-example
-    commit: 89c2a601b0da4a83abafc0846dd2c3b4
-    digest: shake256:32be2c38bb26da84a2d93cd992b056c345e4b3d2c67981e3165fccde58fe99018e999e80ce033a8b1d40916c6c2eaf3d4b43c8e4b82b40e5a8cc25e8ebed937d
+    commit: 3884d59265224cc7834e27bb51c116fd
+    digest: shake256:036f96e7ffcb3ad2ce4e83283f17d127615d9b9bb6c4674cf268395b425b37a7c4cfb0bf144c8eda4396b12c46b29ef566b6002ef85a4cce9bade7b4aa661d3a
   - remote: buf.build
     owner: googleapis
     repository: googleapis

@@ -4,7 +4,7 @@ import (
 	"context"
 	"log"
 
-	pb "grpc-example/gen/telemetry/v1"
+	pb "mqtt-server-go/gen/telemetry/v1"
 
 	mqtt "github.com/eclipse/paho.mqtt.golang"
 	"google.golang.org/protobuf/proto"
@@ -37,7 +37,6 @@ func (s *telemetryHandler) Telemetry(ctx context.Context, req *pb.TelemetryReque
 	// Serialize req to JSON or any other format and publish
 	resp := &pb.TelemetryResponse{
 		Status: "OK",
-		Status2: "OK2",
 	}
 	respBytes, err := proto.Marshal(resp)
 	if err != nil {

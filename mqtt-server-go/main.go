@@ -6,12 +6,12 @@ import (
 	"net"
 	"net/http"
 
-	pbhealth "grpc-example/gen/health/v1"
-	pbtelemetry "grpc-example/gen/telemetry/v1"
+	pbhealth "mqtt-server-go/gen/health/v1"
+	pbtelemetry "mqtt-server-go/gen/telemetry/v1"
 
-	healthhandler "grpc-example/handlers/health"
-	telemetryhandler "grpc-example/handlers/telemetry"
-	"grpc-example/utils"
+	healthhandler "mqtt-server-go/handlers/health"
+	telemetryhandler "mqtt-server-go/handlers/telemetry"
+	"mqtt-server-go/utils"
 
 	"github.com/grpc-ecosystem/grpc-gateway/v2/runtime"
 	"google.golang.org/grpc"
