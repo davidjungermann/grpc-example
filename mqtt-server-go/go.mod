@@ -13,6 +13,7 @@ require (
 require (
 	github.com/golang/protobuf v1.5.3 // indirect
 	github.com/gorilla/websocket v1.4.2 // indirect
+	github.com/joho/godotenv v1.5.1
 	golang.org/x/net v0.10.0 // indirect
 	golang.org/x/sync v0.0.0-20210220032951-036812b2e83c // indirect
 	golang.org/x/sys v0.8.0 // indirect
