@@ -3,8 +3,9 @@ module mqtt-client-go
 go 1.20
 
 require (
-	buf.build/gen/go/djungermann/grpc-example/protocolbuffers/go v1.31.0-20230627064147-da7c3fd7a258.1
+	buf.build/gen/go/djungermann/grpc-example/protocolbuffers/go v1.31.0-20230627123708-b07284b7833f.1
 	github.com/eclipse/paho.mqtt.golang v1.4.2
+	github.com/joho/godotenv v1.5.1
 	google.golang.org/protobuf v1.31.0
 )
 

@@ -2,7 +2,6 @@ package main
 
 import (
 	"crypto/tls"
-	"fmt"
 	"log"
 
 	pb "buf.build/gen/go/djungermann/grpc-example/protocolbuffers/go/proto/telemetry/v1"
@@ -60,7 +59,6 @@ func main() {
 	}
 
 	if token := client.Subscribe(utils.MQTT_TOPIC, 0, func(client mqtt.Client, msg mqtt.Message) {
-		fmt.Println(msg.Payload())
 		telemetry := &pb.Telemetry{}
 		if err := proto.Unmarshal(msg.Payload(), telemetry); err != nil {
 			log.Println("Failed to deserialize message:", err)
