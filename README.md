@@ -18,7 +18,7 @@ The repository is structured as follows:
 
 ## Getting Started
 
-Before running the examples, ensure that you have Go, Node.js, `buf`, and a running MQTT broker installed on your machine. 
+Before running the examples, ensure that you have Go, `buf`, and a running MQTT broker installed on your machine, or running remotely.
 
 For running the Go MQTT publisher:
 
@@ -32,7 +32,7 @@ For running the Go MQTT subscriber:
 
 In each case, the Go publisher will send a telemetry message to the "telemetry" topic at regular intervals, and the Go subscriber will listen to the "telemetry" topic and log the received messages.
 
-This way, you can see a working example of a telemetry service using MQTT and Protobuf in Go, TypeScript, and JavaScript. If you update the `telemetry.proto` file and generate the Go code again, you can see how the changes propagate through the service.
+This way, you can see a working example of a telemetry service using MQTT and Protobuf in Go. If you update the `telemetry.proto` file and generate the Go code again, you can see how the changes propagate through the service.
 
 ## Contributing
 
