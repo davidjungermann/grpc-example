@@ -58,8 +58,7 @@ func main() {
 		log.Fatalf("Failed to connect: %v", token.Error())
 	}
 
-	// Subscribe to the "telemetry" topic
-	if token := client.Subscribe("hackweek/telemetry", 0, func(client mqtt.Client, msg mqtt.Message) {
+	if token := client.Subscribe(utils.MQTT_TOPIC, 0, func(client mqtt.Client, msg mqtt.Message) {
 		telemetry := &pb.Telemetry{}
 		if err := proto.Unmarshal(msg.Payload(), telemetry); err != nil {
 			log.Println("Failed to deserialize message:", err)
