@@ -5,9 +5,11 @@ import (
 	"time"
 
 	pb "mqtt-server-go/gen/telemetry/v1"
+	"mqtt-server-go/rpi"
 
 	mqtt "github.com/eclipse/paho.mqtt.golang"
 	"google.golang.org/protobuf/proto"
+	"google.golang.org/protobuf/types/known/timestamppb"
 )
 
 func Publish(client mqtt.Client, topic string, interval time.Duration) {
@@ -15,9 +17,16 @@ func Publish(client mqtt.Client, topic string, interval time.Duration) {
 
 	// Loop and publish a message at each tick
 	for range ticker.C {
+		temp, err := rpi.ReadCPUTemp()
+
+		if err != nil {
+			log.Printf("Couldn't read temperature, assigning default value: %v", err)
+			temp = 1337.0
+		}
+
 		telemetry := &pb.Telemetry{
-			Status: "OK",
-			// Add other fields as needed
+			Temperature: temp,
+			Timestamp:   timestamppb.New(time.Now().UTC()),
 		}
 
 		data, err := proto.Marshal(telemetry)

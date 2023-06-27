@@ -7,7 +7,6 @@ import (
 	"mqtt-server-go/utils"
 )
 
-
 func main() {
 	client := utils.SetUpMQTTClient()
 	// Publish messages to the "telemetry" topic every 1 second
@@ -16,5 +15,3 @@ func main() {
 	// Block forever, to keep the publisher running.
 	select {}
 }
-
-

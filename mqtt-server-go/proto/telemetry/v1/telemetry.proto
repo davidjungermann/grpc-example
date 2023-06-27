@@ -4,7 +4,9 @@ package proto.telemetry.v1;
 
 option go_package = "telemetry/v1;telemetry";
 
+import "google/protobuf/timestamp.proto";
 
 message Telemetry {
-  string status = 1;
+  double temperature = 1;
+  google.protobuf.Timestamp timestamp = 2;
 }

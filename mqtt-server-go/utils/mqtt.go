@@ -44,7 +44,7 @@ func SetUpMQTTClient() mqtt.Client {
 	}
 
 	opts := mqtt.NewClientOptions()
-	opts.AddBroker("ssl://"+brokerMqttHost+":"+brokerMqttPort)
+	opts.AddBroker("ssl://" + brokerMqttHost + ":" + brokerMqttPort)
 	opts.SetClientID("hackweek-server")
 	opts.SetTLSConfig(tlsConfig)
 	opts.SetUsername(mqttUsername)
