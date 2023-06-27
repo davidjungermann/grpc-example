@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package proto.telemetry.v1;
+
+option go_package = "telemetry/v1;telemetry";
+
+
+message Telemetry {
+  string status = 1;
+}

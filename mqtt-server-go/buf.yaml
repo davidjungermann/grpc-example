@@ -1,0 +1,11 @@
+version: v1
+# TODO: Update this when we start a Buf subscription with an organization
+name: buf.build/djungermann/grpc-example
+breaking:
+  use:
+    - FILE
+lint:
+  use:
+    - DEFAULT
+deps:
+  - buf.build/googleapis/googleapis
