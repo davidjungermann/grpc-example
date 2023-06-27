@@ -21,11 +21,11 @@ func main() {
 	}
 
 	if token := client.Subscribe("telemetry", 0, func(client mqtt.Client, msg mqtt.Message) {
-		telemetryResponse := &pb.TelemetryResponse{}
-		if err := proto.Unmarshal(msg.Payload(), telemetryResponse); err != nil {
+		telemetry := &pb.Telemetry{}
+		if err := proto.Unmarshal(msg.Payload(), telemetry); err != nil {
 			log.Println("Failed to deserialize message:", err)
 		} else {
-			log.Printf("Received message: %+v\n", telemetryResponse)
+			log.Printf("Received message: %+v\n", telemetry)
 		}
 	}); token.Wait() && token.Error() != nil {
 		log.Println(token.Error())
