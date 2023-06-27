@@ -4,6 +4,8 @@ This repository provides an example of using gRPC with Protobuf in TypeScript an
 
 The codebase demonstrates how to set up the gRPC server in Go, and how to create TypeScript and JavaScript clients that can interact with it.
 
+**There's another example in this repository, where Protobuf is used to serialize messages for use with an MQTT broker. Check out the `mqtt` branch**
+
 ## Structure
 
 The repository is structured as follows:
