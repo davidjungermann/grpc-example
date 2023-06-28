@@ -4,7 +4,7 @@ import (
 	"log"
 	"time"
 
-	pb "mqtt-server-go/gen/telemetry/v1"
+	pb "mqtt-server-go/gen/telemetry/v2"
 	"mqtt-server-go/rpi"
 
 	mqtt "github.com/eclipse/paho.mqtt.golang"
@@ -24,17 +24,17 @@ func Publish(client mqtt.Client, topic string, interval time.Duration) {
 			temp = 1337.0
 		}
 
-		// deviceId, err := rpi.GetDeviceID()
+		deviceId, err := rpi.GetDeviceID()
 
-		// if err != nil {
-		// 	log.Printf("Couldn't read device ID, assigning default value: %v", err)
-		// 	deviceId = "rpi-1"
-		// }
+		if err != nil {
+			log.Printf("Couldn't read device ID, assigning default value: %v", err)
+			deviceId = "rpi-1"
+		}
 
 		telemetry := &pb.Telemetry{
 			Temperature: temp,
 			Timestamp:   timestamppb.New(time.Now().UTC()),
-			//DeviceId:   deviceId,
+			DeviceId:   deviceId,
 		}
 
 		data, err := proto.Marshal(telemetry)
