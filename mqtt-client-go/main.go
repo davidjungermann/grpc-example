@@ -4,7 +4,7 @@ import (
 	"crypto/tls"
 	"log"
 
-	pb "buf.build/gen/go/djungermann/grpc-example/protocolbuffers/go/proto/telemetry/v1"
+	pb "buf.build/gen/go/djungermann/grpc-example/protocolbuffers/go/proto/telemetry/v2"
 
 	"mqtt-server-go/utils"
 
