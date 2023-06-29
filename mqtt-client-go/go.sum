@@ -1,5 +1,5 @@
-buf.build/gen/go/djungermann/grpc-example/protocolbuffers/go v1.31.0-20230628091658-52ed37037da1.1 h1:84r1YBaRI7wO/ufYxdLojybl/LVHHvfvHY0jUicoeCc=
-buf.build/gen/go/djungermann/grpc-example/protocolbuffers/go v1.31.0-20230628091658-52ed37037da1.1/go.mod h1:0g9kf1u0eR2CYqNPagBgIrtwBXH5c2xywf3d/F7k5wk=
+buf.build/gen/go/djungermann/grpc-example/protocolbuffers/go v1.31.0-20230629120616-fcbc5fa3d892.1 h1:iaSojOiqge75/Xa5SYukoSDLEEVUtfZ7PeC7YPtyXy8=
+buf.build/gen/go/djungermann/grpc-example/protocolbuffers/go v1.31.0-20230629120616-fcbc5fa3d892.1/go.mod h1:0g9kf1u0eR2CYqNPagBgIrtwBXH5c2xywf3d/F7k5wk=
 github.com/eclipse/paho.mqtt.golang v1.4.2 h1:66wOzfUHSSI1zamx7jR6yMEI5EuHnT1G6rNA5PM12m4=
 github.com/eclipse/paho.mqtt.golang v1.4.2/go.mod h1:JGt0RsEwEX+Xa/agj90YJ9d9DH2b7upDZMK9HRbFvCA=
 github.com/golang/protobuf v1.5.0/go.mod h1:FsONVRAS9T7sI+LIUmWTfcYkHO4aIWwzhcaSAoJOfIk=
