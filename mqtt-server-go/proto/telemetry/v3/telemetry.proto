@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+package proto.telemetry.v3;
+
+option go_package = "telemetry/v3;telemetry";
+
+import "google/protobuf/timestamp.proto";
+
+message Telemetry {
+  int32 temperature = 1;
+  google.protobuf.Timestamp timestamp = 2;
+  string device_id = 3;
+}
