@@ -43,6 +43,9 @@ func Publish(client mqtt.Client, topic string, interval time.Duration) {
 			continue
 		}
 
+		if telemetry.Temperature > 30 {
+			log.Printf("Temperature is too high! %v", telemetry.Temperature)
+		}
 		publishMessage(client, topic, data, false)
 	}
 }
