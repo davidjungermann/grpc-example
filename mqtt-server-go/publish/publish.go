@@ -42,10 +42,6 @@ func Publish(client mqtt.Client, topic string, interval time.Duration) {
 			log.Printf("Error marshalling to proto: %v", err)
 			continue
 		}
-
-		if telemetry.Temperature > 30 {
-			log.Printf("Temperature is too high! %v", telemetry.Temperature)
-		}
 		publishMessage(client, topic, data, false)
 	}
 }
